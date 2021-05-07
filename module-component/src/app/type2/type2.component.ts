@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: '.app-type2',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styles: [`
   p {
     color: red;
-  }`]
+  }`],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class Type2Component implements OnInit {
 
