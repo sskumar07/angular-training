@@ -6,8 +6,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styles: [`
   p {
     color: red;
-  }`],
-  encapsulation: ViewEncapsulation.Emulated
+  }`]
 })
 export class Type2Component implements OnInit {
 
