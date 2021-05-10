@@ -1,0 +1,39 @@
+<h1>Pipes</h1>
+<p>{{applicationName}}</p>
+<h3>1. String Pipes</h3>
+<ul>
+    <li>LowerCase : {{applicationName | lowercase}}</li>
+    <li>UpperCase : {{applicationName | uppercase}}</li>
+    <li>TitleCase : {{applicationName | titlecase}}</li>
+    <li>Slice : {{applicationName | slice:4}}</li>
+    <li>Slice : {{applicationName | slice:5:8}}</li> <!-- 8 is excluded -->
+</ul>
+<h3>2. Number Pipes</h3>
+<ul>
+    <li>Number (5.678) : {{5.678 | number:'1.2-3'}}</li>
+    <li>Number (5.678) : {{5.678 | number:'3.4-5'}}</li>
+    <li>Number (5.678) : {{5.678 | number:'3.1-2'}}</li>
+    <li>Percent (0.25) : {{0.25 | percent}}</li>
+    <li>Percent (0.25) : {{0.25 | percent:'2.1'}}</li>
+    <li>Currency with default format (50) : {{50 | currency}}</li>
+    <li>Currency with specific format (50) : {{50 | currency:'INR'}}</li>
+    <li>Currency with currency code (50) : {{50 | currency:'INR':'code'}}</li>
+    <li>Currency with currency code (50) : {{50 | currency:'INR':'code':'2.1'}}</li>
+</ul>
+<h3>3. Date Pipes</h3>
+<ul>
+    <li>{{today}}</li>
+    <li>{{today | date:'short'}}</li>
+    <li>{{today | date:'shortDate'}}</li>
+    <li>{{today | date:'shortTime'}}</li>
+    <li>{{today | date:'medium'}}</li>
+    <li>{{today | date:'mediumDate'}}</li>
+    <li>{{today | date:'mediumTime'}}</li>
+    <li>{{today | date:'long'}}</li>
+    <li>{{today | date:'longDate'}}</li>
+    <li>{{today | date:'longTime'}}</li>
+    <li>{{today | date:'Y/MM/dd hh:mm:ss a'}}</li>
+</ul>
+<h3>4. JSON Pipe</h3>
+{{employee}}
+<p>JSON pipe: {{employee | json}}</p>
