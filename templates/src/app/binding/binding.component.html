@@ -1,0 +1,24 @@
+<h1>Binding</h1>
+<h3>1. Property Binding</h3>
+
+<button [disabled]='isButtonDisabled'>Disabled Button</button>
+
+<h3>2. Attribute Binding</h3>
+<p class='text-success'>normal paragraph with style</p>
+<p [class.text-success]='isSuccess'>single class binding example</p>
+
+<p [class]='successClass'>multiple class binding example</p>
+
+<p [style.color]="'orange'">Style Binding example</p>
+<p [style.color]="isSuccess ? 'green' : 'orange'">Style Binding example with condition</p>
+
+<p [style]='multiStyle'>Multiple Style binding example</p>
+
+<h3>3. Event Binding</h3>
+<button (click)="buttonClick()">Event</button>
+<p>{{buttonClickCount}}</p>
+<button (click)="onSave($event)">Save</button>
+
+<h3>4. Two Way Binding</h3>
+<input [(ngModel)]="username" type="text">
+<p>{{username}}</p>
