@@ -1,0 +1,48 @@
+<h1>Reactive Form</h1>
+<br>
+{{registrationForm.value | json}}
+
+<br><br>
+<form [formGroup]="registrationForm">
+    UserName: <input type="text" formControlName="userName"
+        [class.is-invalid]="registrationForm.get('userName').invalid && registrationForm.get('userName').touched">
+    <div *ngIf="registrationForm.get('userName').invalid && registrationForm.get('userName').touched">
+        <small class="error" *ngIf="registrationForm.get('userName').errors?.required">Username is required.</small>
+        <small class="error" *ngIf="registrationForm.get('userName').errors?.minlength">Username should have minimum 4
+            characters.</small>
+        <small class="error" *ngIf="registrationForm.get('userName').errors?.forbiddenName">Username is not
+            allowed.</small>
+        <small class="error" *ngIf="registrationForm.get('userName').errors?.forbidden">Password is not allowed as a
+            Userrname.</small>
+    </div>
+    <br><br>
+    Password: <input type="text" formControlName="password">
+    <br><br>
+    Confirm Password: <input type="text" formControlName="confirmPassword"
+        [class.is-invalid]="registrationForm.get('confirmPassword').touched && registrationForm.errors?.mismatch">
+    <div *ngIf="registrationForm.get('confirmPassword').touched && registrationForm.errors?.mismatch">
+        <small *ngIf="registrationForm.errors?.mismatch" class="error">Pasword does not match</small>
+    </div>
+
+    <br><br>
+    <div formGroupName="address">
+        City: <input formControlName="city">
+        <br><br>
+        State: <input formControlName="state">
+        <br><br>
+    </div>
+
+    Email: <input type="text" formControlName="email"><br>
+
+    <small *ngIf="registrationForm.get('email').errors?.required" class="error">Email is required</small><br>
+
+    Subscribe: <input type="checkbox" formControlName="subscribe">
+    <br>
+    <button (click)="addDynamicField()">Add</button>
+    Dynamic Field : 
+    <div formArrayName="dynamicFields" *ngFor="let field of getDynamicFields.controls; index as i">
+        <input type="text" [formControlName]="i">
+    </div>
+    
+
+</form>

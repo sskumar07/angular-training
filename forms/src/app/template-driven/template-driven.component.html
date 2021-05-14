@@ -6,19 +6,22 @@
     <br>
     <input type="text" required name="username" #name="ngModel" [(ngModel)]="userModel.userName"
         [class.is-invalid]="name.invalid && name.touched">
-    <div *ngIf="name.errors && (name.invalid || name.touched)">
+    <div *ngIf="name.errors && (name.invalid && name.touched)">
         <small class="error">Username is required.</small>
     </div>
     <br><br>
     <input type="number" required name="phone" pattern="^\d{10}$" #phone="ngModel" [(ngModel)]="userModel.phoneNumber"
         [class.is-invalid]="phone.invalid && phone.touched">
-    <div *ngIf="phone.errors && (phone.invalid || phone.touched)">
+    <div *ngIf="phone.errors && (phone.invalid && phone.touched)">
         <small *ngIf="phone.errors.required" class="error">Phonenumber is required.</small>
         <small *ngIf="phone.errors.pattern" class="error">Phonenumber should have 10 digits.</small>
     </div>
     <br><br>
     <input type="text" name="email" [(ngModel)]="userModel.email">
     <br><br>
+
+
+    
     <div ngModelGroup="address">
         <input type="text" name="street" ngModel>
         <input type="text" name="city" ngModel>

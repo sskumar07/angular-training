@@ -8,7 +8,8 @@ import { User } from '../model/user';
 })
 export class TemplateDrivenComponent implements OnInit {
 
-  userModel = new User("Kumar", "kumar@gmail.com", 1234567891);
+  userModel = new User("", "kumar@gmail.com", 111111111);
+
   constructor() { }
 
   ngOnInit(): void {
