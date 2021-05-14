@@ -7,16 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BindingComponent implements OnInit {
 
-  isButtonDisabled = true;
+  isButtonDisabled = false;
   columnSpan = 2;
 
-  isSuccess = true;
+  isSuccess = false;
   successClass = 'text-success alignment';
   multiStyle = 'color: blue; padding-left: 20px';
 
   buttonClickCount = 1;
 
-  username = "";
+  username = "Satheesh";
 
   constructor() { }
 
@@ -25,6 +25,7 @@ export class BindingComponent implements OnInit {
 
   buttonClick(){
     this.buttonClickCount = this.buttonClickCount + 1;
+    this.username = "Demo User";
   }
 
   onSave(event: any){

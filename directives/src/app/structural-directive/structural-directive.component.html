@@ -1,0 +1,38 @@
+<h1>2. Structural Directive</h1>
+<h3>2.1 ngIf</h3>
+<div *ngIf="isActive">
+    ngIf Example
+</div>
+<h3>2.1.1 ng-template</h3>
+<ng-template >ng template without anything</ng-template>
+<h3>2.1.2 With Else</h3>
+<div *ngIf="isActive; else elseBlock">
+    ngIfElse If Block
+</div>
+<ng-template #elseBlock>
+    ngIfElse Else Block
+</ng-template>
+
+<h3>2.2 ngFor</h3>
+<div *ngFor="let color of colors">
+    <div>{{color}}</div>
+</div>
+<h5>Accessing Index</h5>
+<div *ngFor="let color of colors; index as i">
+    <div>{{i}} {{color}}</div>
+</div>
+<h5>Accessing First & Last Element</h5>
+<div *ngFor="let color of colors; first as f; last as l">
+    <div>{{f}} {{l}} {{color}}</div>
+</div>
+<h5>Accessing Odd & Even Ittem</h5>
+<div *ngFor="let color of colors; odd as o; even as e">
+    <div>{{o}} {{e}} {{color}}</div>
+</div>
+
+<h3>2.3 ngSwitch</h3>
+<div [ngSwitch]="color">
+    <div *ngSwitchCase="'red'">you have selected red.</div>
+    <div *ngSwitchCase="'orange'">you have selected orange.</div>
+    <div *ngSwitchDefault>default selected</div>
+</div>
