@@ -1,0 +1,16 @@
+<h1>View Employee</h1>
+<table>
+    <tr>
+        <th>Employee ID </th>
+        <th>Employee Name</th>
+    </tr>
+
+    <ng-container *ngFor="let employee of employeeList">
+        <tr>
+            <td (click)="showEmployeeDetail(employee.employeeId)" style="text-align: center; color:blue; cursor:pointer;">{{employee.employeeId}}</td>
+            <td>{{employee.name}}</td>
+        </tr>
+    </ng-container>
+
+</table>
+<router-outlet></router-outlet>
