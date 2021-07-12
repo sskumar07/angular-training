@@ -9,8 +9,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ViewEmployeeComponent implements OnInit {
 
   employeeList = [
-    {employeeId: 1, name: 'Satheesh'},
-    {employeeId: 2, name: 'Kumar'}
+    { employeeId: 1, name: 'Satheesh' },
+    { employeeId: 2, name: 'Kumar' }
   ];
 
   constructor(private router: Router, private route: ActivatedRoute) { }
@@ -18,7 +18,8 @@ export class ViewEmployeeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  showEmployeeDetail(employeeId: number){
-this.router.navigate(['employee-detail', employeeId], {relativeTo: this.route});
+  showEmployeeDetail(employeeId: number) {
+    this.router.navigate(['employee-detail', employeeId], { relativeTo: this.route });
+    //this.router.navigate(['view-employee/employee-detail', employeeId]);
   }
 }

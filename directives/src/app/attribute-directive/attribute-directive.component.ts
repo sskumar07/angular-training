@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AttributeDirectiveComponent implements OnInit {
 
-  hasError = true;
+  hasError = false;
   isSpecial = true;
 
   messageClasses = {
